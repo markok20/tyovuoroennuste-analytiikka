@@ -1,4 +1,4 @@
-# tyovuoroennustenanalytiikka
+# tyovuoroennuste analytiikka
 
 Tarkoituksena on rakentaa ennustemalli saapuneista puheluista contact centeriin. Data on nyt kuukausitasolla, mutta idea on rakentaa mallia vielä viikkotasolla.
 
