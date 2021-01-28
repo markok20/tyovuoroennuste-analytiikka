@@ -6,6 +6,6 @@ Tarkoituksena on tehdä ennuste tämän historiadatan pohjalta tulevista saapuvi
 
 Mietin vielä, onko fiksua tehdä ennuste viikkotasolla? Dataa on saatavilla myös vuorokausitasolla.
 
-Mitä muita ennustemalleja suosittelisit ExponentialSmoothing lisäksi?
+Mietin vielä, mitä muita ennustemalleja on ExponentialSmoothingin lisäksi.
 
 T. Marko
