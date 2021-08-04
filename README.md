@@ -1,49 +1,49 @@
 # tyovuoroennuste analytiikka
 
-Tarkoituksena on rakentaa ennustemalli saapuneista puheluista contact centeriin. 
+The intention is to build a forecast model of incoming calls to the contact center.
 
-Tavoitteena asiakaspalvelun resursoinnin optimointi. 
+The goal is to optimize customer service resourcing.
 
-Haasteena:
+The challenge:
 
-Jos AsPassa on liian vähän resursseja, tulee jonoa ja asiakastyytymättömyyttä. Taustalla SLA-vaatimukset.
+If AsPa has too few resources, there will be queuing and customer dissatisfaction. Underlying SLA requirements.
 
-Jos AsPassa on liikaa väkeä, turhia henkilöstökuluja, ei ole hyödyllistä tekemistä.
+If AsPa has too many people, unnecessary staff costs, there is nothing useful to do.
 
-AsPaan tulevien soittojen/palautteiden määrät vaihtelevat kausiluonteisesti.
+The number of incoming Calls / Feedback to AsPaa varies seasonally.
 
-Muut markkinointitekijät mm. erilaiset kampanjat ja muut tapahtumat lisäävät päivittäistä asiakaskontaktien määrää, mitä historiadata ei huomioi. Tämä on otettava ennusteessa huomioon.
+Other marketing factors e.g. various campaigns and other events increase the number of daily customer contacts, which is not taken into account by historical data. This must be taken into account in the forecast.
 
-Kysynnän aikasarjaennustaminen koneoppimismenetelmällä, ohjelmointikielenä Python
+Time series forecasting of demand by machine learning method, programming language Python
 
-Ennustetaan asiakaspalveluun tulevien soittojen ja sähköpostiviestien päivittäiset/viikottaiset/kuukausittaiset määrät, voidaan asiakaspalvelu resursoida optimaalisemmin. 
+By forecasting the daily / weekly / monthly volumes of calls and e-mails to customer service, customer service can be resourced more optimally.
 
-Historiatieto saatavilla puhelujen ja viestien määristä riittävällä aikasyklillä. Laadullisilla asiakashaastatteluilla voidaan tietoa saada myös muista lähteistä, muun muassa markkinointitekijöistä ja suhdannevaihteluista.
+Historical data available on the number of calls and messages over a sufficient time cycle. Qualitative customer interviews can also provide information from other sources, including marketing factors and cyclical fluctuations.
 
-Haasteena on, että historiadata tuottaa liian subjektiivisia arvioita. Historiatiedon lisäksi haastatteluja ennakoimattomista markkinointitekijöistä.
+The challenge is that historical data produces overly subjective estimates. In addition to historical information, interviews on unforeseen marketing factors.
 
-Aikasarjaennustaminen on aikaan sidottua säännönmukaisuutta.
+Time series forecasting is time-bound regularity.
 
-Aikasarja voidaan jakaa komponentteihin, joita ovat trendi, kausivaihtelu, syklinen vaihtelu sekä satunnaisvaihtelu.
+The time series can be divided into components, which are trend, seasonal variation, cyclical variation, and random variation.
 
-Mallinnuksessa keskeistä parametrien estimointi. 
+Central to modeling is parameter estimation.
 
-Liukuva keskiarvo yksinkertaisin malli ennustaa kehitystä.
+The moving average is the simplest model to predict development.
 
-Liukuvan keskiarvon menetelmässä tulevan ajanhetken kysynnän ennuste on keskiarvo menneiden ajanhetkien kysynnästä.
+In the moving average method, the forecast of future time demand is the average of the demand of past times.
 
-Ratkaisuna: eksponentiaalinen tasoitus (liukuva keskiarvo painotettuna tuoreimpiin ajankohtiin) = > Ennuste reagoi herkästi muutoksiin ja helposti päivitettävissä.
+As a solution: exponential smoothing (moving average weighted to the most recent times) => The forecast is sensitive to changes and easy to update.
 
-Yksi suosituimmista kysynnän ennustamisen malleista.
+One of the most popular models for demand forecasting.
 
-Malliin voidaan lisätä komponentteja, jotka huomioivat trendin ja kausivaihtelun.
+Components that take into account trend and seasonality can be added to the model.
 
-Kysyntään vaikuttavia tekijöitä ovat kysynnän perustason lisäksi trendi-, kausi-, sykli- ja markkinointitekijät sekä ennustamaton vaihtelu.
+In addition to the basic level of demand, factors affecting demand include trend, seasonal, cyclical and marketing factors as well as unpredictable fluctuations.
 
-Mallia voi käyttää myös muiden contact center -datojen ennustamiseen.
+The model can also be used to predict other contact center data.
 
-Yksinkertainen, kaksinkertainen (Holtin malli) ja kolminkertainen (Holt-Winterin malli) eksponentiaalisen tasoituksen mallit. 
+Simple, double (Holt model) and triple (Holt-Winter model) exponential smoothing models.
 
-Eksponentiaalinen tasoitus löytyy statsmodels.tsa-kirjastosta.
+Exponential smoothing can be found in the statsmodels.tsa library.
 
-Kolminkertainen malli huomioi sekä trendin että kausivaihtelun.
+The triple model takes into account both trend and seasonality.
